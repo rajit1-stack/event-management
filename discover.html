@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #222222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: #333;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--theme-color);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        #eventDiscovery h2 {
+            color: var(--theme-color);
+        }
+
+        #search {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        #filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        #filters select, #filters input {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+
+        #eventsList > div {
+            background: #333;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #eventsList h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--theme-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Events</h1>
+    </header>
+    <main>
+        <section id="eventDiscovery">
+            <h2>Upcoming Events</h2>
+            <input type="text" id="search" placeholder="Search events...">
+            <div id="filters">
+                <input type="date" id="filterDate">
+                <select id="filterLocation">
+                    <option value="">All Locations</option>
+                    <option value="New York">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Chicago">Chicago</option>
+                    <!-- Add more locations as needed -->
+                </select>
+                <select id="filterCategory">
+                    <option value="">All Categories</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Technology">Technology</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <select id="sortOptions">
+                    <option value="dateAsc">Date: Ascending</option>
+                    <option value="dateDesc">Date: Descending</option>
+                    <option value="nameAsc">Name: Ascending</option>
+                    <option value="nameDesc">Name: Descending</option>
+                </select>
+            </div>
+            <div id="eventsList">
+                <!-- Event items will be dynamically added here -->
+                <div>
+                    <h3>Event Name</h3>
+                    <p>Date: August 1, 2024</p>
+                    <p>Location: New York</p>
+                    <p>Category: Music</p>
+                </div>
+                <div>
+                    <h3>Event Name</h3>
+                    <p>Date: September 15, 2024</p>
+                    <p>Location: Los Angeles</p>
+                    <p>Category: Art</p>
+                </div>
+                <!-- More events will be added here -->
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #222222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: #333;
+            padding: 1.5rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: var(--theme-color);
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 6rem 2rem 2rem; /* Adjusted padding to account for fixed header */
+        }
+
+        section {
+            background: #333;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--theme-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        #eventsList, #attendeeList, #ticketSales {
+            /* Flexbox layout for items */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .event-item, .attendee-item, .ticket-item {
+            background: #444;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            width: calc(50% - 1rem); /* Responsive layout for items */
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .event-item h3, .attendee-item h3, .ticket-item h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .event-item p, .attendee-item p, .ticket-item p {
+            margin: 0.5rem 0;
+            font-size: 1.4rem;
+        }
+
+        #communicationForm, #updateEventForm {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #communicationForm label, #updateEventForm label {
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        #message, #eventDetails {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #444;
+            border-radius: 0.5rem;
+            background: #555;
+            color: #fff;
+            font-size: 1.5rem;
+            height: 150px;
+            resize: none;
+        }
+
+        #message:focus, #eventDetails:focus {
+            border-color: var(--theme-color);
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--theme-color);
+            color: #fff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.6rem;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <section id="eventManagement">
+            <h2>Manage Your Events</h2>
+            <div id="eventsList">
+                <div class="event-item">
+                    <h3>Event Name</h3>
+                    <p>Date: August 1, 2024</p>
+                    <p>Location: New York</p>
+                </div>
+                <div class="event-item">
+                    <h3>Event Name</h3>
+                    <p>Date: September 15, 2024</p>
+                    <p>Location: Los Angeles</p>
+                </div>
+                <!-- More event items -->
+            </div>
+        </section>
+
+        <section id="attendeeManagement">
+            <h2>View Attendee Lists</h2>
+            <div id="attendeeList">
+                <div class="attendee-item">
+                    <h3>Attendee Name</h3>
+                    <p>Email: attendee1@example.com</p>
+                </div>
+                <div class="attendee-item">
+                    <h3>Attendee Name</h3>
+                    <p>Email: attendee2@example.com</p>
+                </div>
+                <!-- More attendee items -->
+            </div>
+        </section>
+
+        <section id="ticketSalesManagement">
+            <h2>Track Ticket Sales</h2>
+            <div id="ticketSales">
+                <div class="ticket-item">
+                    <h3>Event Name</h3>
+                    <p>Tickets Sold: 100</p>
+                </div>
+                <div class="ticket-item">
+                    <h3>Event Name</h3>
+                    <p>Tickets Sold: 200</p>
+                </div>
+                <!-- More ticket items -->
+            </div>
+        </section>
+
+        <section id="updateEventDetails">
+            <h2>Update Event Details</h2>
+            <form id="updateEventForm">
+                <label for="eventDetails">Event Details:</label>
+                <textarea id="eventDetails" name="eventDetails" required></textarea>
+                <a href="#" class="btn">Update Event</a>
+            </form>
+        </section>
+
+        <section id="communications">
+            <h2>Communicate with Attendees</h2>
+            <form id="communicationForm">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <a href="#" class="btn">Send Message</a>
+            </form>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
